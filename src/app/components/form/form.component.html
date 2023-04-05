@@ -1,0 +1,21 @@
+<div>
+  <label for="name">Username</label>
+  <input
+    type="text"
+    #boxValue
+    (keyup.entre)="update(boxValue.value)"
+    (blur)="update(boxValue.value)"
+  />
+  <br />
+  <input type="text" (keyup)="onKey($event)" /><br />
+  <input type="text" #inputValue />
+  <button (click)="giveOutput(inputValue.value)">click Me</button><br />
+  <input type="text" #newItem />
+  <button (click)="addNewItem(newItem.value)">clickMe</button>
+  {{ name }}<br />
+  {{ values }}
+  {{ updateValues }}
+
+  <h2>The Hero birthday is on {{ birthday | date }}</h2>
+  <h3>Amount = {{ amount | currency : "GBP" }}</h3>
+</div>
